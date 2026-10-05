@@ -1,0 +1,248 @@
+---
+import CalIcon from "../icons/cal.svg";
+import CardIcon from "../icons/card.svg";
+import LawIcon from "../icons/law.svg";
+import MoneyIcon from "../icons/money.svg";
+import ArrowLeft from "../icons/arrow-left.svg";
+import ArrowRight from "../icons/arrow--right.svg";
+---
+
+<section class="financial-projections">
+  <div class="financial-inner">
+    <div class="financial-top">
+      <div class="financial-heading">
+        <p class="eyebrow">FINANCIAL TOOLS</p>
+
+        <h2>Financial Projections</h2>
+
+        <p class="intro">
+          Financial projections are essential for planning and monitoring a
+          company's performance. They provide insights into potential revenue,
+          expenses, and profitability over specific periods.
+        </p>
+      </div>
+
+      <div class="slider-buttons">
+        <button type="button" aria-label="Previous">
+          <img src={ArrowLeft.src} alt="" aria-hidden="true" />
+        </button>
+
+        <button type="button" aria-label="Next">
+          <img src={ArrowRight.src} alt="" aria-hidden="true" />
+        </button>
+      </div>
+    </div>
+
+    <div class="financial-cards">
+      <article>
+        <div class="icon">
+          <img src={CalIcon.src} alt="" aria-hidden="true" />
+        </div>
+
+        <h3>The Balance Sheet</h3>
+
+        <p>
+          The Balance Sheet is a summary of the assets and liabilities and
+          equity of a business at a specific point of time.
+        </p>
+      </article>
+
+      <article>
+        <div class="icon">
+          <img src={CardIcon.src} alt="" aria-hidden="true" />
+        </div>
+
+        <h3>Income Statement</h3>
+
+        <p>
+          The Income (Profit and Loss) Statement, commonly referred to as the
+          P&amp;L statement, summarizes the revenue and expenses for a specific
+          time period.
+        </p>
+      </article>
+
+      <article>
+        <div class="icon">
+          <img src={LawIcon.src} alt="" aria-hidden="true" />
+        </div>
+
+        <h3>Financial Plan</h3>
+
+        <p>
+          Keep your information current and review the documents on a regular
+          basis. Review them with key individuals within your company.
+        </p>
+      </article>
+
+      <article>
+        <div class="icon">
+          <img src={MoneyIcon.src} alt="" aria-hidden="true" />
+        </div>
+
+        <h3>Financial Ratios</h3>
+
+        <p>
+          Ratios are useful when comparing your company with the competition on
+          financial performance and when benchmarking the performance of your
+          company.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<style>
+  @layer components {
+    .financial-projections {
+      background: #f5f6f7;
+      color: var(--color-neutrals-900);
+      padding: 6rem 2rem;
+      overflow: hidden;
+    }
+
+    .financial-inner {
+      max-width: 1024px;
+      margin-inline: auto;
+
+      /* Container query */
+      container-type: inline-size;
+      container-name: financial;
+    }
+
+    .financial-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: var(--space-8);
+      margin-bottom: 3rem;
+    }
+
+    .financial-heading {
+      max-width: 520px;
+    }
+
+    .eyebrow {
+      margin: 0 0 var(--space-3);
+      font-size: 0.75rem;
+      font-weight: var(--font-weight-semibold);
+      letter-spacing: 0.16em;
+    }
+
+    h2 {
+      margin: 0 0 var(--space-4);
+      font-size: var(--font-size-2xl);
+      line-height: 1.1;
+    }
+
+    .intro {
+      margin: 0;
+      color: var(--color-text-muted);
+      line-height: 1.5;
+    }
+
+    .slider-buttons {
+      display: flex;
+      gap: var(--space-4);
+    }
+
+    .slider-buttons button {
+      display: grid;
+      place-items: center;
+
+      width: 48px;
+      height: 48px;
+      padding: 0;
+
+      border: 0;
+      border-radius: var(--radius-circle);
+
+      background: var(--color-neutrals-900);
+
+      cursor: pointer;
+    }
+
+    .slider-buttons button img {
+      display: block;
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+
+      /* pilene bliver hvide */
+      filter: brightness(0) invert(1);
+    }
+
+    .financial-cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+    .financial-cards article {
+      background: var(--color-surface-tertiary);
+      border-radius: 14px;
+      padding: 1.5rem;
+      min-height: 220px;
+    }
+
+    .icon {
+      display: flex;
+      align-items: center;
+      height: 24px;
+      margin-bottom: var(--space-4);
+    }
+
+    .icon img {
+      display: block;
+      width: 22px;
+      height: 22px;
+      object-fit: contain;
+    }
+
+    .financial-cards h3 {
+      margin: 0 0 var(--space-3);
+      font-size: 1rem;
+      font-weight: var(--font-weight-semibold);
+    }
+
+    .financial-cards p {
+      margin: 0;
+      color: var(--color-text-muted);
+      font-size: 0.875rem;
+      line-height: 1.5;
+    }
+
+    /* componenten tilpasser sig sin egen bredde */
+    @container financial (max-width: 850px) {
+      .financial-cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @container financial (max-width: 600px) {
+      .financial-top {
+        align-items: flex-start;
+        flex-direction: column;
+        margin-bottom: var(--space-8);
+      }
+
+      h2 {
+        font-size: 1.75rem;
+      }
+
+      .financial-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .financial-cards article {
+        min-height: auto;
+      }
+    }
+
+    /* Padding i siderne tilpasser sig skærmens bredde */
+    @media (max-width: 700px) {
+      .financial-projections {
+        padding: 4rem 1.5rem;
+      }
+    }
+  }
+</style>

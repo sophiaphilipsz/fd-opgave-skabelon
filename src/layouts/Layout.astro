@@ -1,6 +1,8 @@
 ---
 import "@styles/main.css";
 import { Font } from "astro:assets";
+import { ClientRouter } from "astro:transitions";
+import Header from "@components/Header.astro";
 ---
 
 <html lang="en">
@@ -9,15 +11,24 @@ import { Font } from "astro:assets";
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>DIN TITEL HER. MÅSKE SOM PROP?</title>
+    <title>AskExperts</title>
+
     <Font cssVariable="--font-cabin" preload />
     <Font cssVariable="--font-lato" preload />
+
+    <ClientRouter />
+
     <style is:inline>
       @layer reset, global, tokens, components, overrides;
     </style>
   </head>
+
   <body>
-    <slot />
+    <Header />
+
+    <main>
+      <slot />
+    </main>
   </body>
 </html>
 

@@ -1,0 +1,249 @@
+<section class="experience">
+  <div class="experience-inner">
+    <div class="experience-content">
+      <p class="eyebrow">EXPERIENCE</p>
+
+      <h2>
+        More than 25 years<br />
+        of experience
+      </h2>
+
+      <p class="description">3000+ our clients are insured around the World</p>
+    </div>
+
+    <div class="experience-stats">
+      <div class="stat">
+        <div class="circle circle-85">
+          <div class="circle-inner">
+            <span>85%</span>
+          </div>
+        </div>
+        <p>Consistency</p>
+      </div>
+
+      <div class="stat">
+        <div class="circle circle-95">
+          <div class="circle-inner">
+            <span>95%</span>
+          </div>
+        </div>
+        <p>Improvement</p>
+      </div>
+
+      <div class="stat">
+        <div class="circle circle-90">
+          <div class="circle-inner">
+            <span>90%</span>
+          </div>
+        </div>
+        <p>Branching</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @layer components {
+    .experience {
+      width: 100%;
+      background-color: var(--color-yellow-500);
+      color: #080d19;
+      padding: 5rem var(--space-8);
+    }
+
+    .experience-inner {
+      width: 100%;
+      max-width: 1024px;
+      margin-inline: auto;
+
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      align-items: center;
+      gap: var(--space-16);
+    }
+
+    .eyebrow {
+      margin: 0 0 var(--space-3);
+
+      font-size: 0.75rem;
+      font-weight: var(--font-weight-semibold);
+      letter-spacing: 0.16em;
+    }
+
+    .experience-content h2 {
+      margin: 0 0 var(--space-4);
+
+      font-size: var(--font-size-2xl);
+      font-weight: var(--font-weight-semibold);
+      line-height: 1.1;
+    }
+
+    .description {
+      margin: 0;
+      font-size: var(--font-size-sm);
+    }
+
+    .experience-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-8);
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    /* Cirkler */
+
+    .circle {
+      width: 140px;
+      height: 140px;
+
+      margin-inline: auto;
+
+      position: relative;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 50%;
+    }
+
+    /*
+      Den hvide del viser procenten.
+      Den mørkere/gennemsigtige del viser den resterende del
+      af cirklen ligesom i Figma.
+    */
+
+    .circle-85 {
+      background: conic-gradient(
+        from 306deg,
+        rgba(8, 13, 25, 0.14) 0deg 54deg,
+        #ffffff 54deg 360deg
+      );
+    }
+
+    .circle-95 {
+      background: conic-gradient(
+        from 342deg,
+        rgba(8, 13, 25, 0.14) 0deg 18deg,
+        #ffffff 18deg 360deg
+      );
+    }
+
+    .circle-90 {
+      background: conic-gradient(
+        from 324deg,
+        rgba(8, 13, 25, 0.14) 0deg 36deg,
+        #ffffff 36deg 360deg
+      );
+    }
+
+    /*
+      Den gule cirkel i midten skjuler gradienten,
+      så der kun er en tynd ring tilbage.
+    */
+
+    .circle-inner {
+      width: 134px;
+      height: 134px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 50%;
+      background-color: var(--color-yellow-500);
+    }
+
+    .circle span {
+      font-size: 2rem;
+      font-weight: var(--font-weight-bold);
+      line-height: 1;
+    }
+
+    /* Sort prik med hvid kant */
+
+    .circle::before {
+      content: "";
+
+      position: absolute;
+      z-index: 2;
+
+      width: 15px;
+      height: 15px;
+
+      box-sizing: border-box;
+
+      background-color: #080d19;
+      border: 3px solid #ffffff;
+      border-radius: 50%;
+    }
+
+    /*
+      Prikkerne placeres ved overgangen mellem
+      den hvide og mørkere del af cirklen.
+    */
+
+    .circle-85::before {
+      top: 19px;
+      left: 4px;
+    }
+
+    .circle-95::before {
+      top: -3px;
+      left: 34px;
+    }
+
+    .circle-90::before {
+      top: 7px;
+      left: 14px;
+    }
+
+    .stat p {
+      margin: var(--space-5) 0 0;
+
+      font-size: var(--font-size-sm);
+      font-weight: var(--font-weight-semibold);
+    }
+
+    /* Tablet */
+
+    @media (max-width: 900px) {
+      .experience-inner {
+        grid-template-columns: 1fr;
+        gap: var(--space-12);
+      }
+
+      .experience-content {
+        text-align: center;
+      }
+
+      .experience-stats {
+        width: 100%;
+        max-width: 600px;
+        margin-inline: auto;
+
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-6);
+      }
+    }
+
+    /* Mobil */
+
+    @media (max-width: 700px) {
+      .experience {
+        padding: var(--space-16) 1.5rem;
+      }
+
+      .experience-inner {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .experience-stats {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+    }
+  }
+</style>

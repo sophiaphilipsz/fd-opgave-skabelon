@@ -1,0 +1,257 @@
+---
+import Layers from "@icons/layers.svg";
+import Bars from "@icons/bars.svg";
+import Globe from "@icons/globe.svg";
+import Gear from "@icons/gear.svg";
+---
+
+<section class="core-values">
+  <div class="core-values-inner">
+    <div class="heading-row">
+      <div class="heading-content">
+        <p class="eyebrow">GROWING WITH OUR CLIENTS</p>
+
+        <h2>Our core values &amp; principles</h2>
+
+        <p class="intro">
+          Capitalize on low hanging fruit to identify a ballpark value added
+          activity beta test. Override the digital divide with additional from
+          DevOps.
+        </p>
+      </div>
+
+      <a class="contact-button" href="#">Get in touch</a>
+    </div>
+
+    <div class="values-grid">
+      <article class="value-card">
+        <div class="value-icon">
+          <Layers />
+        </div>
+
+        <h3>Creative Ideas</h3>
+
+        <p>
+          Explore innovative strategies tailored to your goals. Unlock unique
+          solutions that inspire growth and creativity. Drive impactful change.
+        </p>
+
+        <a class="read-more" href="#">
+          Read More <span>→</span>
+        </a>
+      </article>
+
+      <article class="value-card">
+        <div class="value-icon">
+          <Bars />
+        </div>
+
+        <h3>Best Features</h3>
+
+        <p>
+          Deliver advanced tools designed for seamless integration. Optimize
+          workflows with cutting-edge technology.
+        </p>
+
+        <a class="read-more" href="#">
+          Read More <span>→</span>
+        </a>
+      </article>
+
+      <article class="value-card">
+        <div class="value-icon">
+          <Globe />
+        </div>
+
+        <h3>Experience</h3>
+
+        <p>
+          Leverage years of proven expertise across diverse industries. Empower
+          your business with our skilled professionals. Achieve sustainable
+          success.
+        </p>
+
+        <a class="read-more" href="#">
+          Read More <span>→</span>
+        </a>
+      </article>
+
+      <article class="value-card">
+        <div class="value-icon">
+          <Gear />
+        </div>
+
+        <h3>Easy Solutions</h3>
+
+        <p>
+          Streamline your challenges with simple, effective solutions. Ensure
+          hassle-free implementation for measurable results.
+        </p>
+
+        <a class="read-more" href="#">
+          Read More <span>→</span>
+        </a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<style>
+  .core-values {
+    background: var(--color-neutrals-900);
+    color: var(--color-neutrals-50);
+    padding: 5rem var(--space-8);
+  }
+
+  .core-values-inner {
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+
+  .heading-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: var(--space-8);
+    margin-bottom: var(--space-8);
+  }
+
+  .heading-content {
+    max-width: 620px;
+  }
+
+  .eyebrow {
+    margin: 0 0 0.65rem;
+    color: #a8afbd;
+    font-size: 0.7rem;
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: 0.16em;
+  }
+
+  .heading-content h2 {
+    margin: 0 0 var(--space-3);
+    color: var(--color-neutrals-50);
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-semibold);
+    line-height: 1.1;
+  }
+
+  .intro {
+    margin: 0;
+    color: #a8afbd;
+    font-size: var(--font-size-sm);
+    line-height: 1.5;
+  }
+
+  .contact-button {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.7rem 1.5rem;
+    background: var(--color-neutrals-50);
+    color: #080d19;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: var(--font-weight-semibold);
+    text-decoration: none;
+  }
+
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  .value-card {
+    min-height: 285px;
+    padding: 1.5rem;
+    background: #f7f7f8;
+    color: #080d19;
+    border-radius: 14px;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  .value-icon {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: var(--space-5);
+    background: #080d19;
+    color: var(--color-neutrals-50);
+    border-radius: var(--radius-circle);
+  }
+
+  .value-icon :global(svg) {
+    width: 21px;
+    height: 21px;
+    display: block;
+    color: var(--color-neutrals-50);
+  }
+
+  .value-card h3 {
+    margin: 0 0 0.8rem;
+    color: #080d19;
+    font-size: 1rem;
+    font-weight: var(--font-weight-semibold);
+    line-height: 1.2;
+  }
+
+  .value-card > p {
+    margin: 0;
+    color: #667085;
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+
+  .read-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+
+    margin-top: auto;
+    padding-top: var(--space-5);
+
+    color: #080d19;
+    font-size: 0.78rem;
+    font-weight: var(--font-weight-semibold);
+    text-decoration: none;
+  }
+
+  .read-more span {
+    font-size: 1rem;
+  }
+
+  @media (max-width: 900px) {
+    .values-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 700px) {
+    .core-values {
+      padding: var(--space-16) 1.5rem;
+    }
+
+    .heading-row {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .heading-content h2 {
+      font-size: 1.75rem;
+    }
+
+    .values-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

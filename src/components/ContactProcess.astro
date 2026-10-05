@@ -1,0 +1,278 @@
+---
+import Phone from "@icons/phone.svg";
+import Clock from "@icons/clock.svg";
+import Pin from "@icons/pin.svg";
+
+import contactMain from "../assets/images/contact-main.png";
+import contactTop from "../assets/images/contact-top.png";
+import contactBottom from "../assets/images/contact-bottom.png";
+---
+
+<section class="contact-process">
+  <div class="contact-inner">
+    <div class="contact-content">
+      <p class="eyebrow">PROCESS</p>
+
+      <h2>Contact Us. It’s Easy.</h2>
+
+      <p class="description">
+        Leverage agile frameworks to provide a robust synopsis for high level
+        overviews. Iterative approaches to corporate strategy foster
+        collaborative.
+      </p>
+
+      <div class="contact-details">
+        <div class="contact-item">
+          <div class="contact-icon phone">
+            <Phone />
+          </div>
+
+          <div>
+            <p class="contact-label">Call Today</p>
+            <p class="contact-value">+1 800 100 900</p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon clock">
+            <Clock />
+          </div>
+
+          <div>
+            <p class="contact-label">Monday To Friday</p>
+            <p class="contact-value">9AM - 5PM</p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon pin">
+            <Pin />
+          </div>
+
+          <div>
+            <p class="contact-label">USA Office</p>
+            <p class="contact-value">
+              195 Devonshire St Boston, MA<br />
+              02110
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-images">
+      <div class="green-shape"></div>
+
+      <img
+        class="image-main"
+        src="/images/contact-main.jpg"
+        alt="Business consultant"
+      />
+
+      <img class="image-main" src={contactMain.src} alt="Business consultant" />
+
+      <img
+        class="image-top"
+        src={contactTop.src}
+        alt="People working together"
+      />
+
+      <img
+        class="image-bottom"
+        src={contactBottom.src}
+        alt="Business meeting"
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  @layer components {
+    .contact-process {
+      background: var(--color-surface-primary);
+      color: #080d19;
+      padding: 6rem var(--space-8);
+    }
+
+    .contact-inner {
+      max-width: 1024px;
+      margin-inline: auto;
+
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      align-items: center;
+      gap: 5rem;
+    }
+
+    /* LEFT SIDE */
+
+    .eyebrow {
+      margin: 0 0 0.7rem;
+      font-size: 0.7rem;
+      font-weight: var(--font-weight-semibold);
+      letter-spacing: 0.16em;
+    }
+
+    .contact-content h2 {
+      margin: 0 0 var(--space-4);
+      font-size: var(--font-size-2xl);
+      line-height: 1.1;
+      font-weight: var(--font-weight-semibold);
+    }
+
+    .description {
+      max-width: 330px;
+      margin: 0 0 var(--space-8);
+
+      color: #667085;
+      font-size: var(--font-size-sm);
+      line-height: 1.6;
+    }
+
+    /* CONTACT DETAILS */
+
+    .contact-details {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+    }
+
+    .contact-icon {
+      width: 42px;
+      height: 42px;
+      flex-shrink: 0;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: var(--radius-circle);
+    }
+
+    .contact-icon :global(svg) {
+      width: 19px;
+      height: 19px;
+    }
+
+    .contact-icon.phone {
+      background: #fff1c7;
+      color: #e5aa1c;
+    }
+
+    .contact-icon.clock {
+      background: #d8f5d7;
+      color: #46b85c;
+    }
+
+    .contact-icon.pin {
+      background: #eeeeee;
+      color: #080d19;
+    }
+
+    .contact-label {
+      margin: 0 0 0.15rem;
+      color: #667085;
+      font-size: 0.7rem;
+    }
+
+    .contact-value {
+      margin: 0;
+      font-size: var(--font-size-sm);
+      font-weight: var(--font-weight-semibold);
+      line-height: 1.3;
+    }
+
+    /* IMAGES */
+
+    .contact-images {
+      position: relative;
+
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: var(--space-4);
+
+      height: 400px;
+    }
+
+    .contact-images img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      border-radius: 18px;
+    }
+
+    .image-main {
+      grid-column: 1;
+      grid-row: 1 / 3;
+
+      position: relative;
+      z-index: 2;
+    }
+
+    .image-top {
+      grid-column: 2;
+      grid-row: 1;
+
+      position: relative;
+      z-index: 2;
+    }
+
+    .image-bottom {
+      grid-column: 2;
+      grid-row: 2;
+
+      position: relative;
+      z-index: 2;
+    }
+
+    .green-shape {
+      position: absolute;
+
+      width: 180px;
+      height: 120px;
+
+      left: -35px;
+      bottom: -20px;
+
+      background: #a8edaa;
+      border-radius: 16px;
+
+      z-index: 1;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 700px) {
+      .contact-process {
+        padding: var(--space-16) 1.5rem;
+      }
+
+      .contact-inner {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .contact-content h2 {
+        font-size: 1.75rem;
+      }
+
+      .contact-images {
+        height: 330px;
+        gap: var(--space-3);
+      }
+
+      .green-shape {
+        width: 140px;
+        height: 100px;
+        left: -15px;
+        bottom: -15px;
+      }
+    }
+  }
+</style>

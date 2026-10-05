@@ -1,0 +1,88 @@
+<footer class="footer">
+  <div class="footer-inner">
+    <a href="/" class="footer-logo">
+      Ask<span>Experts</span>
+    </a>
+
+    <p class="copyright">©2026 Consultalk. All rights reserved</p>
+
+    <div class="footer-links">
+      <a href="/">Terms of Service</a>
+      <span>|</span>
+      <a href="/">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+
+<style>
+  @layer components {
+    .footer {
+      background: #030816;
+      color: var(--color-neutrals-50);
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 1.5rem var(--space-8);
+    }
+
+    .footer-inner {
+      width: min(100% - 2rem, 1024px);
+      margin-inline: auto;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      align-items: center;
+      gap: var(--space-8);
+    }
+
+    .footer-logo {
+      color: var(--color-neutrals-50);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: var(--font-weight-semibold);
+    }
+
+    .footer-logo span {
+      color: var(--color-yellow-500);
+    }
+
+    .copyright {
+      margin: 0;
+      text-align: center;
+      font-size: 0.7rem;
+      color: #9ca3af;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.7rem;
+      color: #9ca3af;
+    }
+
+    .footer-links a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: var(--color-neutrals-50);
+    }
+
+    @media (max-width: 700px) {
+      .footer {
+        padding: 1.5rem;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: var(--space-3);
+      }
+
+      .footer-links {
+        justify-content: center;
+      }
+    }
+  }
+</style>

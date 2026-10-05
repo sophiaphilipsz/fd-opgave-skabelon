@@ -1,10 +1,1201 @@
 ---
-import Layout from "@layouts/Layout.astro";
+import Layout from "../layouts/Layout.astro";
+import Newsletter from "../components/Newsletter.astro";
+import teamworking from "../data/images/teamworking.jpg";
+import faqData from "../data/faq.json";
 ---
 
 <Layout>
-  <main>
-    <h1>About us</h1>
-    <!-- Byg sidens sektioner her med udgangspunkt i Figma-designet. -->
+  <main class="about-page">
+    <!-- =========================
+         HERO
+    ========================== -->
+    <section class="about-hero">
+      <div class="about-hero-content">
+        <p class="about-label">ABOUT</p>
+
+        <h1>Igniting Innovation</h1>
+
+        <p class="about-intro">
+          Our strength lies in the collaboration between our talented teams and
+          esteemed clients. We cultivate a workplace that champions innovation,
+          promotes peak performance, and guarantees client satisfaction.
+        </p>
+      </div>
+    </section>
+
+    <!-- =========================
+         OUR VISION
+    ========================== -->
+    <section class="vision-section">
+      <div class="vision-container">
+        <div class="vision-grid">
+          <div class="vision-content">
+            <p class="section-label">OUR VISION</p>
+
+            <h2>Turn your ideas into reality.</h2>
+
+            <p class="vision-intro">
+              Capitalize on low hanging fruit to identify a ballpark value added
+              activity beta test. Override the digital divide with additional
+              from DevOps.
+            </p>
+
+            <div class="vision-points">
+              <div class="vision-point">
+                <span class="check" aria-hidden="true">✓</span>
+
+                <p>
+                  Bring to the table win-win survival strategies to ensure
+                  proactive domination. At the end of the day.
+                </p>
+              </div>
+
+              <div class="vision-point">
+                <span class="check" aria-hidden="true">✓</span>
+
+                <p>
+                  Capitalize on low hanging fruit to identify a ballpark value
+                  added activity to beta test override the digital.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="vision-image-wrapper">
+            <div class="green-shape" aria-hidden="true"></div>
+
+            <img
+              src={teamworking.src}
+              alt="Team working together"
+              class="vision-image"
+            />
+          </div>
+        </div>
+
+        <!-- STATS -->
+        <div class="stats">
+          <div class="stat">
+            <strong>1128+</strong>
+            <span>Successful Work</span>
+          </div>
+
+          <div class="stat">
+            <strong>908+</strong>
+            <span>Team member</span>
+          </div>
+
+          <div class="stat">
+            <strong>258+</strong>
+            <span>Happy Customers</span>
+          </div>
+
+          <div class="stat">
+            <strong>564+</strong>
+            <span>Creative Idea</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         CORE VALUES
+    ========================== -->
+    <section class="values-section">
+      <div class="values-container">
+        <div class="values-top">
+          <div class="values-heading">
+            <p class="section-label">GROWING WITH OUR CLIENTS</p>
+
+            <h2>Our core values & principles</h2>
+
+            <p class="values-intro">
+              Capitalize on low hanging fruit to identify a ballpark value added
+              activity beta test. Override the digital divide with additional
+              from DevOps.
+            </p>
+          </div>
+
+          <a href="#contact" class="dark-button"> Get in touch </a>
+        </div>
+
+        <!--
+          Wrapperen bruges som container til container queries.
+          Kortene reagerer derfor på den plads, komponenten har,
+          i stedet for kun viewportens bredde.
+        -->
+        <div class="value-cards-wrapper">
+          <div class="value-cards">
+            <!-- CARD 1 -->
+            <article class="value-card">
+              <div class="value-icon">
+                <img src="/src/icons/layers.svg" alt="" />
+              </div>
+
+              <h3>Creative Ideas</h3>
+
+              <p>
+                Explore innovative strategies tailored to your goals. Unlock
+                unique solutions that inspire growth and creativity. Drive
+                impactful change.
+              </p>
+
+              <a href="#">
+                Read More <span aria-hidden="true">→</span>
+              </a>
+            </article>
+
+            <!-- CARD 2 -->
+            <article class="value-card">
+              <div class="value-icon">
+                <img src="/src/icons/bars.svg" alt="" />
+              </div>
+
+              <h3>Best Features</h3>
+
+              <p>
+                Deliver advanced tools designed for seamless integration.
+                Optimize workflows with cutting-edge technology.
+              </p>
+
+              <a href="#">
+                Read More <span aria-hidden="true">→</span>
+              </a>
+            </article>
+
+            <!-- CARD 3 -->
+            <article class="value-card">
+              <div class="value-icon">
+                <img src="/src/icons/globe.svg" alt="" />
+              </div>
+
+              <h3>Experience</h3>
+
+              <p>
+                Leverage years of proven expertise across diverse industries.
+                Empower your business with our skilled professionals. Achieve
+                sustainable success.
+              </p>
+
+              <a href="#">
+                Read More <span aria-hidden="true">→</span>
+              </a>
+            </article>
+
+            <!-- CARD 4 -->
+            <article class="value-card">
+              <div class="value-icon">
+                <img src="/src/icons/gear.svg" alt="" />
+              </div>
+
+              <h3>Easy Solutions</h3>
+
+              <p>
+                Streamline your challenges with simple, effective solutions.
+                Ensure hassle-free implementation for measurable results.
+              </p>
+
+              <a href="#">
+                Read More <span aria-hidden="true">→</span>
+              </a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         OUR TEAM
+    ========================== -->
+    <section class="team-preview">
+      <div class="team-preview-container">
+        <!-- VENSTRE -->
+        <div class="team-preview-intro">
+          <p class="section-label">OUR TEAM</p>
+
+          <h2>
+            We champion<br />
+            the bold
+          </h2>
+
+          <p class="team-description">
+            Our success stems from the synergy between dedicated teams and our
+            valued clients. We prioritize a company culture that fosters
+            exceptional productivity and ensures customer satisfaction.
+          </p>
+
+          <a href="/team" class="dark-button"> Meet the Team </a>
+        </div>
+
+        <!-- HØJRE -->
+        <div class="team-preview-members">
+          <!-- SARAH -->
+          <article class="preview-member">
+            <img
+              src="https://ftk-api.pages.dev/images/sarah.webp"
+              alt="Sarah Jasmine"
+            />
+
+            <div class="preview-member-content">
+              <h3>Sarah Jasmine</h3>
+
+              <span>CEO at Company</span>
+
+              <p>
+                Driving innovation and leadership with a focus on strategic
+                growth and impactful decisions.
+              </p>
+            </div>
+          </article>
+
+          <!-- JOHN -->
+          <article class="preview-member">
+            <img
+              src="https://ftk-api.pages.dev/images/john.webp"
+              alt="John Carter"
+            />
+
+            <div class="preview-member-content">
+              <h3>John Carter</h3>
+
+              <span>Manager</span>
+
+              <p>
+                Expert in operational efficiency, ensuring smooth processes and
+                exceptional team performance.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         FAQ
+    ========================== -->
+    <section class="faq-section">
+      <div class="faq-box">
+        <p class="faq-label">FAQ</p>
+
+        <h2>Customer Questions</h2>
+
+        <div class="faq-list">
+          {
+            faqData.faq.map((item) => (
+              <details class="faq-item">
+                <summary>
+                  <span>{item.question}</span>
+
+                  <span class="faq-icon" aria-hidden="true" />
+                </summary>
+
+                <div class="faq-answer">
+                  <div class="faq-answer-inner">
+                    {item.answer.split("\n\n").map((paragraph) => (
+                      <p>{paragraph}</p>
+                    ))}
+                  </div>
+                </div>
+              </details>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <div id="contact">
+      <Newsletter />
+    </div>
   </main>
 </Layout>
+
+<style>
+  /* ==================================================
+     ABOUT PAGE / MAKROLAYOUT
+  ================================================== */
+
+  .about-page {
+    display: grid;
+
+    grid-template-columns:
+      minmax(20px, 1fr)
+      minmax(0, 960px)
+      minmax(20px, 1fr);
+
+    background: var(--color-surface-primary);
+    color: var(--color-text);
+  }
+
+  .about-page > * {
+    grid-column: 1 / -1;
+  }
+
+  /* ==================================================
+     HERO
+  ================================================== */
+
+  .about-hero {
+    overflow: hidden;
+
+    padding-top: var(--space-16);
+    padding-right: 20px;
+    padding-bottom: var(--space-20);
+    padding-left: 20px;
+
+    background: var(--color-surface-secondary);
+
+    text-align: center;
+  }
+
+  .about-hero-content {
+    width: min(100%, 760px);
+
+    margin-inline: auto;
+  }
+
+  .about-label {
+    margin: 0 0 var(--space-4);
+
+    color: var(--color-text);
+
+    font-size: var(--font-size-sm);
+    font-weight: 400;
+
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+  }
+
+  .about-hero h1 {
+    position: relative;
+
+    width: fit-content;
+
+    margin: 0 auto;
+
+    color: var(--color-text);
+
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+
+    line-height: 1.1;
+  }
+
+  /* Gul streg under overskriften */
+  .about-hero h1::after {
+    content: "";
+
+    position: absolute;
+
+    top: calc(100% + 5px);
+    left: 0;
+
+    width: 100vw;
+    height: 3px;
+
+    background: var(--color-action);
+  }
+
+  .about-intro {
+    max-width: 520px;
+
+    margin: var(--space-8) auto 0;
+
+    color: var(--color-text-muted);
+
+    font-size: var(--font-size-sm);
+
+    line-height: 1.5;
+  }
+
+  /* ==================================================
+     VISION
+  ================================================== */
+
+  .vision-section {
+    padding: 90px 24px 70px;
+
+    background: var(--color-surface-primary);
+  }
+
+  .vision-container {
+    width: min(100%, 960px);
+
+    margin-inline: auto;
+  }
+
+  .vision-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 90px;
+
+    align-items: center;
+  }
+
+  .section-label {
+    margin: 0 0 14px;
+
+    font-size: 11px;
+    font-weight: 500;
+
+    letter-spacing: 0.16em;
+
+    text-transform: uppercase;
+  }
+
+  .vision-content h2 {
+    margin: 0 0 15px;
+
+    font-size: 29px;
+
+    line-height: 1.15;
+  }
+
+  .vision-intro {
+    max-width: 440px;
+
+    margin: 0 0 20px;
+
+    color: var(--color-text-muted);
+
+    font-size: 12px;
+
+    line-height: 1.55;
+  }
+
+  .vision-points {
+    display: grid;
+
+    gap: 16px;
+  }
+
+  .vision-point {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 13px;
+  }
+
+  .vision-point p {
+    margin: 0;
+
+    color: var(--color-text-muted);
+
+    font-size: 11px;
+
+    line-height: 1.5;
+  }
+
+  .check {
+    display: grid;
+
+    place-items: center;
+
+    flex-shrink: 0;
+
+    width: 16px;
+    height: 16px;
+
+    border: 1.5px solid #45c761;
+    border-radius: 50%;
+
+    color: #45c761;
+
+    font-size: 9px;
+    font-weight: 700;
+  }
+
+  /* ==================================================
+     VISION IMAGE
+  ================================================== */
+
+  .vision-image-wrapper {
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+  }
+
+  .vision-image {
+    position: relative;
+
+    z-index: 2;
+
+    display: block;
+
+    width: 100%;
+    max-width: 360px;
+    height: 240px;
+
+    object-fit: cover;
+
+    border-radius: 12px;
+  }
+
+  .green-shape {
+    position: absolute;
+
+    z-index: 1;
+
+    top: -14px;
+    right: 15px;
+
+    width: 90px;
+    height: 65px;
+
+    background: #9be89e;
+
+    border-radius: 12px;
+  }
+
+  /* ==================================================
+     STATS
+  ================================================== */
+
+  .stats {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    width: min(100%, 760px);
+
+    margin: 55px auto 0;
+
+    gap: 40px;
+  }
+
+  .stat {
+    text-align: center;
+  }
+
+  .stat strong {
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-size: 25px;
+
+    line-height: 1;
+  }
+
+  .stat span {
+    color: var(--color-text-muted);
+
+    font-size: 10px;
+  }
+
+  /* ==================================================
+     VALUES
+  ================================================== */
+
+  .values-section {
+    padding: 75px 24px 85px;
+
+    background: var(--color-surface-secondary);
+  }
+
+  .values-container {
+    width: min(100%, 960px);
+
+    margin-inline: auto;
+  }
+
+  .values-top {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: flex-end;
+
+    gap: 40px;
+
+    margin-bottom: 30px;
+  }
+
+  .values-heading h2 {
+    margin: 0 0 10px;
+
+    font-size: 27px;
+
+    line-height: 1.2;
+  }
+
+  .values-intro {
+    max-width: 530px;
+
+    margin: 0;
+
+    color: var(--color-text-muted);
+
+    font-size: 12px;
+
+    line-height: 1.5;
+  }
+
+  /* ==================================================
+     BUTTON
+  ================================================== */
+
+  .dark-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    padding: 12px 23px;
+
+    border-radius: 999px;
+
+    background: var(--color-text);
+
+    color: var(--color-surface-primary);
+
+    font-size: 11px;
+
+    text-decoration: none;
+  }
+
+  /* ==================================================
+     VALUE CARDS
+     SIZE CONTAINER QUERY
+  ================================================== */
+
+  .value-cards-wrapper {
+    container-type: inline-size;
+    container-name: value-cards;
+  }
+
+  .value-cards {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+  }
+
+  .value-card {
+    display: flex;
+
+    flex-direction: column;
+
+    min-width: 0;
+    min-height: 250px;
+
+    padding: 20px;
+
+    background: var(--color-surface-primary);
+
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+
+    overflow-wrap: anywhere;
+  }
+
+  .value-icon {
+    display: grid;
+
+    place-items: center;
+
+    width: 38px;
+    height: 38px;
+
+    margin-bottom: 17px;
+
+    border-radius: 50%;
+
+    background: var(--color-text);
+  }
+
+  .value-icon img {
+    width: 19px;
+    height: 19px;
+
+    filter: invert(1);
+  }
+
+  .value-card h3 {
+    margin: 0 0 11px;
+
+    font-size: 15px;
+  }
+
+  .value-card p {
+    margin: 0 0 18px;
+
+    color: var(--color-text-muted);
+
+    font-size: 11px;
+
+    line-height: 1.55;
+  }
+
+  .value-card > a {
+    margin-top: auto;
+
+    color: var(--color-text);
+
+    font-size: 11px;
+    font-weight: 600;
+
+    text-decoration: none;
+  }
+
+  .value-card > a span {
+    margin-left: 5px;
+
+    font-size: 16px;
+  }
+
+  /* ==================================================
+     CONTAINER QUERIES
+  ================================================== */
+
+  @container value-cards (max-width: 760px) {
+    .value-cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @container value-cards (max-width: 420px) {
+    .value-cards {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* ==================================================
+     TEAM
+  ================================================== */
+
+  .team-preview {
+    padding: 80px 20px;
+
+    background: var(--color-surface-primary);
+  }
+
+  .team-preview-container {
+    display: grid;
+
+    grid-template-columns: 0.8fr 1.2fr;
+
+    gap: 90px;
+
+    width: min(100%, 960px);
+
+    margin-inline: auto;
+  }
+
+  .team-preview-intro h2 {
+    margin: 0 0 18px;
+
+    font-size: 30px;
+
+    line-height: 1.1;
+  }
+
+  .team-description {
+    max-width: 350px;
+
+    margin: 0 0 20px;
+
+    color: var(--color-text-muted);
+
+    font-size: 12px;
+
+    line-height: 1.55;
+  }
+
+  .team-preview-members {
+    display: grid;
+
+    gap: 22px;
+  }
+
+  .preview-member {
+    display: grid;
+
+    grid-template-columns: 120px 1fr;
+
+    gap: 20px;
+
+    align-items: center;
+  }
+
+  .preview-member img {
+    display: block;
+
+    width: 120px;
+    height: 105px;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+  }
+
+  .preview-member h3 {
+    margin: 0 0 5px;
+
+    font-size: 16px;
+  }
+
+  .preview-member span {
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-size: 11px;
+  }
+
+  .preview-member p {
+    margin: 0;
+
+    color: var(--color-text-muted);
+
+    font-size: 11px;
+
+    line-height: 1.5;
+  }
+
+  /* ==================================================
+     FAQ
+  ================================================== */
+
+  .faq-section {
+    padding: 80px 20px;
+
+    background: #ffffff;
+  }
+
+  .faq-box {
+    width: min(100%, 620px);
+
+    margin-inline: auto;
+
+    padding: 55px 60px;
+
+    background: #f7f8f9;
+
+    border-radius: 14px;
+  }
+
+  .faq-label {
+    margin: 0 0 12px;
+
+    text-align: center;
+
+    color: #090d18;
+
+    font-size: 10px;
+    font-weight: 500;
+
+    letter-spacing: 0.12em;
+
+    text-transform: uppercase;
+  }
+
+  .faq-box h2 {
+    margin: 0 0 26px;
+
+    text-align: center;
+
+    color: #090d18;
+
+    font-size: 26px;
+    font-weight: 700;
+
+    line-height: 1.2;
+  }
+
+  .faq-list {
+    width: 100%;
+  }
+
+  .faq-item {
+    margin: 0;
+
+    border-bottom: 1px solid #dedfe2;
+  }
+
+  .faq-item summary {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    width: 100%;
+
+    padding: 14px 0;
+
+    color: #090d18;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    line-height: 1.4;
+
+    cursor: pointer;
+
+    list-style: none;
+  }
+
+  /* Fjerner browserens normale trekant */
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-item summary::marker {
+    content: "";
+  }
+
+  /* ==================================================
+     FAQ PLUS / MINUS
+  ================================================== */
+
+  .faq-icon {
+    position: relative;
+
+    display: block;
+
+    flex: 0 0 14px;
+
+    width: 14px;
+    height: 14px;
+  }
+
+  .faq-icon::before,
+  .faq-icon::after {
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 10px;
+    height: 1px;
+
+    background: #090d18;
+
+    transform: translate(-50%, -50%);
+  }
+
+  .faq-icon::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+
+  .faq-item[open] .faq-icon::after {
+    opacity: 0;
+  }
+
+  /* ==================================================
+     FAQ ANSWER
+     FALLBACK
+  ================================================== */
+
+  .faq-answer {
+    padding: 0 35px 15px 0;
+  }
+
+  .faq-answer p {
+    margin: 0 0 8px;
+
+    color: #667085;
+
+    font-size: 10px;
+    font-weight: 400;
+
+    line-height: 1.55;
+  }
+
+  .faq-answer p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ==================================================
+     INTERPOLATE-SIZE
+     PROGRESSIVE ENHANCEMENT
+  ================================================== */
+
+  @supports (interpolate-size: allow-keywords) {
+    :global(html) {
+      interpolate-size: allow-keywords;
+    }
+
+    .faq-answer {
+      height: 0;
+
+      overflow: hidden;
+
+      padding-top: 0;
+      padding-bottom: 0;
+
+      transition:
+        height 250ms ease,
+        padding 250ms ease;
+    }
+
+    .faq-item[open] .faq-answer {
+      height: auto;
+
+      padding: 0 35px 15px 0;
+    }
+  }
+
+  /* ==================================================
+     SUBGRID
+     PROGRESSIVE ENHANCEMENT
+  ================================================== */
+
+  @supports (grid-template-columns: subgrid) {
+    .about-hero,
+    .vision-section,
+    .values-section,
+    .team-preview,
+    .faq-section {
+      display: grid;
+
+      grid-template-columns: subgrid;
+    }
+
+    .about-hero-content,
+    .vision-container,
+    .values-container,
+    .team-preview-container,
+    .faq-box {
+      grid-column: 2;
+    }
+  }
+
+  /* ==================================================
+     TABLET
+  ================================================== */
+
+  @media (max-width: 900px) {
+    .vision-grid {
+      gap: 50px;
+    }
+
+    .team-preview-container {
+      gap: 50px;
+    }
+  }
+
+  /* ==================================================
+     MOBILE
+  ================================================== */
+
+  @media (max-width: 650px) {
+    .about-page {
+      grid-template-columns:
+        20px
+        minmax(0, 1fr)
+        20px;
+    }
+
+    .about-hero {
+      padding-top: var(--space-10);
+
+      padding-bottom: var(--space-16);
+    }
+
+    .about-hero-content {
+      width: 100%;
+    }
+
+    .about-label {
+      margin-bottom: var(--space-3);
+    }
+
+    .about-hero h1 {
+      font-size: var(--font-size-2xl);
+    }
+
+    .about-intro {
+      max-width: 100%;
+
+      margin-top: var(--space-8);
+    }
+
+    .vision-section {
+      padding: 65px 20px;
+    }
+
+    .vision-grid {
+      grid-template-columns: 1fr;
+
+      gap: 45px;
+    }
+
+    .vision-content h2 {
+      font-size: 25px;
+    }
+
+    .vision-image {
+      max-width: 100%;
+    }
+
+    .stats {
+      grid-template-columns: repeat(2, 1fr);
+
+      row-gap: 35px;
+    }
+
+    .values-section {
+      padding: 65px 20px;
+    }
+
+    .values-top {
+      flex-direction: column;
+
+      align-items: flex-start;
+    }
+
+    .team-preview {
+      padding: 65px 20px 80px;
+    }
+
+    .team-preview-container {
+      grid-template-columns: 1fr;
+
+      gap: 50px;
+    }
+
+    .preview-member {
+      grid-template-columns: 90px 1fr;
+    }
+
+    .preview-member img {
+      width: 90px;
+      height: 90px;
+    }
+
+    .faq-section {
+      padding: 65px 20px 80px;
+    }
+
+    .faq-box {
+      width: 100%;
+
+      padding: 40px 25px;
+    }
+
+    .faq-box h2 {
+      font-size: 24px;
+    }
+  }
+
+  /* ==================================================
+     REDUCED MOTION
+  ================================================== */
+
+  @media (prefers-reduced-motion: reduce) {
+    .faq-answer {
+      transition: none;
+    }
+  }
+</style>

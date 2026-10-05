@@ -3,6 +3,8 @@
 import { getCaseStudies } from "@lib/api";
 import { Image } from "astro:assets";
 import Layout from "@layouts/Layout.astro";
+import Newsletter from "@components/Newsletter.astro";
+import Footer from "@components/Footer.astro";
 
 export async function getStaticPaths() {
   const caseStudies = await getCaseStudies();
@@ -18,6 +20,18 @@ const { caseName, category, date, image, buttonLabel } = caseStudy.caseDetails;
 ---
 
 <Layout>
+  <section class="case-hero">
+    <p class="case-hero-label">CASE STUDIES</p>
+
+    <h1>Taxes &amp; Efficiency</h1>
+
+    <p class="case-hero-description">
+      Our achievements reflect the close collaboration between our expert teams
+      and our esteemed clientele. We cultivate a workplace that champions peak
+      performance and guarantees client satisfaction.
+    </p>
+  </section>
+
   <article class="case-story-article">
     <header>
       <Image
@@ -48,11 +62,7 @@ const { caseName, category, date, image, buttonLabel } = caseStudy.caseDetails;
       {
         caseStudy.sections.map((section, index) => (
           <>
-            {index === 0 ? (
-              <h2>{section.title}</h2>
-            ) : (
-              <h3>{section.title}</h3>
-            )}
+            {index === 0 ? <h2>{section.title}</h2> : <h3>{section.title}</h3>}
 
             {Array.isArray(section.content) ? (
               <>
@@ -90,4 +100,319 @@ const { caseName, category, date, image, buttonLabel } = caseStudy.caseDetails;
   </article>
 </Layout>
 
-<style></style>
+<style>
+  @layer components {
+    /* HERO */
+
+    .case-hero {
+      background: var(--color-surface-secondary);
+      color: var(--color-text);
+      text-align: center;
+      padding: var(--space-20) var(--space-4);
+    }
+
+    .case-hero-label {
+      margin: 0 0 var(--space-4);
+      font-size: 0.7rem;
+      font-weight: var(--font-weight-semibold);
+      letter-spacing: 0.16em;
+    }
+
+    .case-hero h1 {
+      width: fit-content;
+      margin: 0 auto var(--space-8);
+      padding-inline: var(--space-2);
+      border-bottom: 4px solid var(--color-action);
+
+      font-size: 2.5rem;
+      line-height: 1.1;
+      font-weight: var(--font-weight-bold);
+    }
+
+    .case-hero-description {
+      max-width: 500px;
+      margin: 0 auto;
+
+      color: var(--color-text-muted);
+      font-size: var(--font-size-sm);
+      line-height: 1.6;
+    }
+
+    /* CASE */
+
+    .case-story-article {
+      display: grid;
+      grid-template-columns:
+        1fr
+        minmax(0, 1024px)
+        1fr;
+    }
+
+    .case-story-article > header,
+    .case-story-content {
+      grid-column: 1 / -1;
+
+      display: grid;
+      grid-template-columns: subgrid;
+    }
+
+    /* IMAGE + DETAILS */
+
+    .case-story-article > header {
+      padding: var(--space-20) var(--space-8) 0;
+    }
+
+    .case-story-article > header > img {
+      grid-column: 2;
+
+      width: 100%;
+      height: 360px;
+      display: block;
+
+      object-fit: cover;
+      border-radius: var(--space-4);
+    }
+
+    .case-details {
+      grid-column: 2;
+
+      width: 86%;
+      min-height: 105px;
+      margin: -55px auto 0;
+      padding: var(--space-5) var(--space-8);
+
+      position: relative;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-8);
+
+      background: var(--color-ui-primary);
+      color: var(--color-on-ui-primary);
+
+      border-radius: var(--space-4);
+    }
+    .case-details dl {
+      flex: 1;
+
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-8);
+
+      margin: 0;
+    }
+
+    .case-details dt {
+      margin-bottom: var(--space-2);
+
+      font-size: 0.7rem;
+      font-weight: var(--font-weight-semibold);
+    }
+
+    .case-details dd {
+      margin: 0;
+
+      color: var(--color-on-ui-primary-muted);
+      font-size: 0.7rem;
+    }
+
+    .case-details .button {
+      flex-shrink: 0;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: var(--space-3) var(--space-5);
+
+      background: var(--color-action);
+      color: var(--color-text);
+
+      border-radius: 999px;
+
+      font-size: 0.7rem;
+      font-weight: var(--font-weight-semibold);
+      text-decoration: none;
+    }
+
+    /* CONTENT */
+
+    .case-story-content {
+      padding: var(--space-10) var(--space-8) var(--space-20);
+    }
+
+    .case-story-content > * {
+      grid-column: 2;
+      width: 82%;
+      margin-inline: auto;
+    }
+
+    .case-story-content > * + * {
+      margin-top: var(--flow-space, var(--space-4));
+    }
+
+    .case-story-content h2 {
+      --flow-space: var(--space-10);
+
+      margin-bottom: 0;
+
+      color: var(--color-text);
+      font-size: var(--font-size-2xl);
+      line-height: 1.2;
+      font-weight: var(--font-weight-semibold);
+    }
+
+    .case-story-content h3 {
+      --flow-space: var(--space-10);
+
+      margin-bottom: 0;
+
+      color: var(--color-text);
+      font-size: var(--font-size-lg);
+      line-height: 1.2;
+      font-weight: var(--font-weight-semibold);
+    }
+
+    .case-story-content p {
+      --flow-space: var(--space-3);
+
+      margin-bottom: 0;
+
+      color: var(--color-text-muted);
+      font-size: var(--font-size-sm);
+      line-height: 1.6;
+    }
+
+    .case-story-content ul {
+      --flow-space: var(--space-5);
+
+      padding-left: var(--space-5);
+      margin-bottom: 0;
+
+      color: var(--color-text-muted);
+      font-size: var(--font-size-sm);
+      line-height: 1.8;
+    }
+
+    /* CONTENT IMAGE */
+
+    .case-story-content figure {
+      --flow-space: var(--space-10);
+
+      grid-column: 2;
+
+      position: relative;
+
+      width: 100%;
+      margin-inline: auto;
+      margin-bottom: 0;
+
+      overflow: hidden;
+    }
+
+    .case-story-content figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    /* Sort skygge nederst på billedet */
+    .case-story-content figure::after {
+      content: "";
+      position: absolute;
+
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      height: 35%;
+
+      background: linear-gradient(to bottom, transparent, rgba(3, 7, 18, 0.85));
+
+      pointer-events: none;
+    }
+
+    /* Teksten på billedet */
+    .case-story-content figure figcaption {
+      position: absolute;
+
+      left: 0;
+      right: 0;
+      bottom: var(--space-4);
+
+      z-index: 2;
+
+      width: 100%;
+      max-width: none;
+
+      margin: 0;
+      padding-inline: var(--space-4);
+
+      color: var(--color-on-surface-elevated);
+
+      font-size: var(--font-size-sm);
+      text-align: center;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 700px) {
+      .case-hero {
+        padding: var(--space-16) var(--space-5);
+      }
+
+      .case-hero h1 {
+        font-size: var(--font-size-2xl);
+      }
+
+      .case-story-article {
+        grid-template-columns:
+          1fr
+          minmax(0, 100%)
+          1fr;
+      }
+
+      .case-story-article > header {
+        padding: var(--space-10) var(--space-4) 0;
+      }
+
+      .case-story-article > header > img {
+        height: 240px;
+      }
+
+      .case-details {
+        width: calc(100% - var(--space-5));
+        margin-top: -30px;
+        padding: var(--space-5);
+
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .case-details dl {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+      }
+
+      .case-details .button {
+        align-self: flex-start;
+      }
+
+      .case-story-content {
+        padding: var(--space-10) var(--space-4) var(--space-16);
+      }
+
+      .case-story-content > * {
+        width: 100%;
+      }
+
+      .case-story-content h2 {
+        font-size: 1.75rem;
+      }
+    }
+  }
+</style>
+
+<Newsletter />
+<Footer />

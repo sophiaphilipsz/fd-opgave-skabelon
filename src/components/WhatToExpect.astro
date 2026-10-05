@@ -1,0 +1,131 @@
+---
+import { Image } from "astro:assets";
+import ExpectImage from "@assets/images/what-to-expect.png";
+import Checkmark from "@icons/checkmark.svg";
+---
+
+<section class="what-to-expect">
+  <div class="expect-image">
+    <Image src={ExpectImage} alt="Team working together" />
+  </div>
+
+  <div class="expect-content">
+    <p class="eyebrow">WE'LL WORK WITH YOU</p>
+
+    <h2>What To Expect</h2>
+
+    <p>
+      Our collaboration is built on transparency, efficiency, and measurable
+      results. Together, we create strategies tailored to your unique needs and
+      goals.
+    </p>
+
+    <ul>
+      <li>
+        <Checkmark width={20} height={20} />
+        <span>
+          Collaborate to build actionable strategies that drive sustainable
+          growth and deliver tangible outcomes.
+        </span>
+      </li>
+
+      <li>
+        <Checkmark width={20} height={20} />
+        <span>
+          Identify opportunities to optimize processes and implement impactful
+          solutions with measurable results.
+        </span>
+      </li>
+    </ul>
+  </div>
+</section>
+<style>
+  @layer components {
+    .what-to-expect {
+      max-width: 1024px;
+      margin-inline: auto;
+      padding: 7rem 2rem;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 4rem;
+      background: var(--color-surface-primary);
+    }
+
+    .expect-image {
+      position: relative;
+    }
+
+    .expect-image::before {
+      content: "";
+      position: absolute;
+      width: 110px;
+      height: 110px;
+      background: var(--color-green-400);
+      border-radius: 12px;
+      top: -30px;
+      left: -30px;
+      z-index: 0;
+    }
+
+    .expect-image img {
+      position: relative;
+      z-index: 1;
+      display: block;
+      width: 100%;
+      border-radius: 18px;
+    }
+
+    .expect-content {
+      color: #080d19;
+    }
+
+    .eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 0.16em;
+      font-weight: var(--font-weight-semibold);
+      margin-bottom: var(--space-3);
+    }
+
+    .expect-content h2 {
+      font-size: var(--font-size-2xl);
+      margin-bottom: var(--space-4);
+    }
+
+    .expect-content > p:not(.eyebrow) {
+      color: #62697a;
+      line-height: 1.5;
+      margin-bottom: 1.5rem;
+    }
+
+    .expect-content ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: var(--space-4);
+    }
+
+    .expect-content li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+      color: #62697a;
+      line-height: 1.4;
+    }
+
+    .expect-content li svg {
+      flex-shrink: 0;
+      color: var(--color-green-400);
+      margin-top: 0.15rem;
+    }
+
+    @media (max-width: 700px) {
+      .what-to-expect {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        padding-block: 5rem;
+      }
+    }
+  }
+</style>

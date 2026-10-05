@@ -10,12 +10,30 @@ const serviceData = await fetch("https://ftk-api.pages.dev/services").then(
 <div class="services">
   {serviceData.map((service) => <ServiceCard service={service} />)}
 </div>
-
 <style>
   @layer components {
     .services {
       display: grid;
+      grid-template-columns: repeat(3, 1fr);
       gap: 1rem;
+
+      width: calc(100% - 3rem);
+      max-width: 900px;
+      margin-inline: auto;
+
+      position: relative;
+      transform: translateY(25%);
+      z-index: 2;
+    }
+
+    @media (max-width: 700px) {
+      .services {
+        grid-template-columns: 1fr;
+        width: calc(100% - 3rem);
+        max-width: 420px;
+        gap: 1rem;
+        transform: translateY(10%);
+      }
     }
   }
 </style>
