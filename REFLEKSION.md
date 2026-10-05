@@ -145,6 +145,6 @@ Hvis I har brugt AI til en væsentlig del af løsningen, så beskriv kort:
 
 Jeg har brugt AI som hjælp undervejs, hvis jeg har været i tvivl om kode eller haft fejl, jeg ikke selv kunne forstå eller løse. Jeg brugte også AI til at forstå Astro bedre, da jeg ikke var med til introduktionen og ikke havde arbejdet med det før. AI foreslog blandt andet, at jeg delte forsiden op i flere komponenter. Jeg er dog i tvivl om, hvor nødvendigt det var at dele den op i så mange komponenter og om der nok var en anden måde det skulle sættes op på?. Hvis jeg har brugt AI, har jeg brug foreslagene som en hjælp og selv justeret og rettet dem så de passer til, og tjekket efter at det fungere optimalt.
 
-Særligt cirkl diagrammerne var en stor udfodring for mig, jeg kunne ikke få dem til at fungere, prikkerne endte først med at være helt ude fra cirklen, så der måtte jeg have hjælp fra AI til at løse den, og fik til sidst den rimelig tæt på figma designet.
+Særligt cirkl diagrammerne var en stor udfodring for mig, jeg kunne ikke få dem til at fungere ordenligt, prikkerne endte først med at være helt ude fra cirklen, så der måtte jeg have hjælp fra AI til at løse den, og fik til sidst den rimelig tæt på figma designet.
 
-Jeg brugte også AI til loginboksen, fordi jeg havde problemer med at få den placeret rigtigt under login knappen. AI hjalp mig med at ''få Anchor Positioning'' til at fungere.
+Jeg brugte også AI til loginboksen, fordi jeg havde problemer med at få den placeret rigtigt under login knappen. AI hjalp mig med at få ''Anchor Positioning'' til at fungere.
