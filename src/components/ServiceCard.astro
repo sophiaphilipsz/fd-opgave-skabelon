@@ -3,28 +3,9 @@ const { service } = Astro.props;
 import ArrowRight from "@icons/arrow--right.svg";
 ---
 
-<article>
+<article class="service-card">
   <h2>{service.title}</h2>
 
-  <p>{service.description}</p>
-
-  <a href="#0">
-    {service.buttonText}
-    <ArrowRight stroke-width={2.5} />
-  </a>
-
-  <!-- <a> burde måske være en variant af en component -->
-</article>
-
-<style>
-  @layer components {
-    ---
-const { service } = Astro.props;
-import ArrowRight from "@icons/arrow--right.svg";
----
-
-<article>
-  <h2>{service.title}</h2>
   <p>{service.description}</p>
 
   <a href="#0">
@@ -34,38 +15,66 @@ import ArrowRight from "@icons/arrow--right.svg";
 </article>
 
 <style>
-  @layer components {
-    article {
-      background: var(--color-blue-700-transparent);
-      color: var(--color-on-surface-elevated);
+  .service-card {
+    background: var(--color-blue-700-transparent);
+    color: var(--color-on-surface-elevated);
 
-      padding: var(--space-8);
-      border-radius: 20px;
-      border: 1px solid var(--color-neutrals-700);
+    padding: 2rem;
+    border: 1px solid var(--color-neutrals-700);
+    border-radius: 20px;
 
-      height: 100%;
+    height: 100%;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  .service-card h2 {
+    margin: 0 0 var(--space-3);
+
+    color: var(--color-on-surface-elevated);
+
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    line-height: 1.2;
+  }
+
+  .service-card p {
+    margin: 0;
+
+    color: var(--color-on-surface-elevated);
+
+    line-height: 1.5;
+  }
+
+  .service-card a {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+
+    gap: var(--space-3);
+
+    margin-top: auto;
+    padding-top: var(--space-8);
+
+    color: var(--color-action);
+
+    font-weight: var(--font-weight-bold);
+  }
+
+  .service-card a :global(svg) {
+    width: 16px;
+    height: 16px;
+  }
+
+  @media (max-width: 700px) {
+    .service-card {
+      padding: var(--space-5);
     }
 
-    h2 {
-      /* Luft mellem titel og brødtekst */
-      margin: 0 0 var(--space-4) 0;
-    }
-
-    p {
-      margin: 0 0 var(--space-8) 0;
-    }
-
-    a {
-      display: inline-flex;
-      align-items: center;
-      gap: 1ch;
-
-      color: var(--color-action);
-      font-weight: bold;
-
-      svg {
-        inline-size: 16px;
-      }
+    .service-card a {
+      padding-top: var(--space-5);
     }
   }
 </style>
